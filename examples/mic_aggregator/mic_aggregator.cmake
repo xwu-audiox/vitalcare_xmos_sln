@@ -24,7 +24,6 @@ file(GLOB APP_SOURCES               ${APP_SRC_PATH}/*.c
 )
 
 # Add files for USB build config
-message(STATUS CMAKE_CURRENT_LIST_DIR: ${CMAKE_CURRENT_LIST_DIR})
 if(EXISTS ${CMAKE_CURRENT_LIST_DIR}/lib_xua.cmake)
     include("${CMAKE_CURRENT_LIST_DIR}/lib_xua.cmake")
 endif()
