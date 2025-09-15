@@ -1,8 +1,8 @@
 # VitalCare Project Modification Summary
-
-## Modified Files List
 Instructiions to setting up building tools and build firmware: 
 https://docs.google.com/document/d/1VChpM-qvemn7rFueaXeTY9Z4EXOQb2EEMjocmrVE9aY/edit?tab=t.0
+## Modified Files List
+
 ### AGC (Automatic Gain Control) Parameter Adjustment
 - `modules/voice/modules/lib_agc/api/agc_profiles.h`
 
