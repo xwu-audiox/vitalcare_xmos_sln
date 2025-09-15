@@ -17,6 +17,7 @@
 #include "generic_pipeline.h"
 #include "adec_api.h"
 
+
 /* App headers */
 #include "app_conf.h"
 #include "audio_pipeline.h"
@@ -34,6 +35,8 @@ static aec_conf_t aec_de_mode_conf;
 static aec_conf_t aec_non_de_mode_conf;
 static adec_config_t adec_conf;
 
+
+
 static void *audio_pipeline_input_i(void *input_app_data)
 {
     frame_data_t *frame_data;
@@ -41,13 +44,17 @@ static void *audio_pipeline_input_i(void *input_app_data)
     frame_data = pvPortMalloc(sizeof(frame_data_t));
     memset(frame_data, 0x00, sizeof(frame_data_t));
 
+    // Read reference audio for AEC
     audio_pipeline_input(input_app_data,
                        (int32_t **)frame_data->aec_reference_audio_samples,
                        4,
                        appconfAUDIO_PIPELINE_FRAME_ADVANCE);
 
+
+
     frame_data->vnr_pred_flag = 0;
 
+    // Copy microphone data to samples for processing
     memcpy(frame_data->samples, frame_data->mic_samples_passthrough, sizeof(frame_data->samples));
 
     return frame_data;
@@ -77,9 +84,15 @@ static void stage_aec(frame_data_t *frame_data)
                           frame_data->samples,
                           frame_data->aec_reference_audio_samples);
 
+    // AEC output for VNR feature extraction (commented out for debugging)
+    // memcpy(frame_data->aec_output_for_vnr, stage_1_out, AEC_MAX_Y_CHANNELS * appconfAUDIO_PIPELINE_FRAME_ADVANCE * sizeof(int32_t));
+    
+    // Update samples for further processing
     memcpy(frame_data->samples, stage_1_out, AEC_MAX_Y_CHANNELS * appconfAUDIO_PIPELINE_FRAME_ADVANCE * sizeof(int32_t));
 #endif
 }
+
+
 
 static void initialize_pipeline_stages(void)
 {
@@ -97,6 +110,8 @@ static void initialize_pipeline_stages(void)
     adec_conf.bypass = 1; // Bypass automatic DE correction
     adec_conf.force_de_cycle_trigger = 1; // Force a delay correction cycle, so that delay correction happens once after initialisation. Make sure this is set back to 0 after adec has requested a transition into DE mode once, to stop any further delay correction (automatic or forced) by ADEC
     stage_1_init(&stage_1_state, &aec_de_mode_conf, &aec_non_de_mode_conf, &adec_conf);
+    
+
 }
 
 void audio_pipeline_init(
@@ -111,7 +126,6 @@ void audio_pipeline_init(
 
     const configSTACK_DEPTH_TYPE stage_stack_sizes[] = {
         configMINIMAL_STACK_SIZE + RTOS_THREAD_STACK_SIZE(stage_aec) + RTOS_THREAD_STACK_SIZE(audio_pipeline_output_i) + RTOS_THREAD_STACK_SIZE(audio_pipeline_input_i),
-
     };
 
     initialize_pipeline_stages();

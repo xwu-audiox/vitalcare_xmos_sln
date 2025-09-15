@@ -32,7 +32,7 @@
 #error This pipeline is only configured for 240 frame advance
 #endif
 
-#define VNR_AGC_THRESHOLD (0.5)
+#define VNR_AGC_THRESHOLD (0.001)
 
 #if ON_TILE(0)
 static ic_stage_ctx_t DWORD_ALIGNED ic_stage_state = {};

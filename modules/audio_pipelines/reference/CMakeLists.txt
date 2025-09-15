@@ -102,6 +102,43 @@ target_link_libraries(adec_altarch_aec_ic_ns_agc_2mic_2ref
 )
 
 ##******************************************
+## Create ADEC altarch AEC+IC+NS+DEREVERB+AGC
+##   2 mic input channels
+#    2 reference input channels
+##******************************************
+
+add_library(adec_altarch_aec_ic_ns_dereverb_agc_2mic_2ref INTERFACE)
+target_sources(adec_altarch_aec_ic_ns_dereverb_agc_2mic_2ref
+    INTERFACE
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch/audio_pipeline_t0.c
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch/audio_pipeline_t1.c
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch/stage1/delay_buffer.c
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch/stage1/stage_1.c
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch/aec/aec_process_frame_1thread.c
+)
+target_include_directories(adec_altarch_aec_ic_ns_dereverb_agc_2mic_2ref
+    INTERFACE
+        ${CMAKE_CURRENT_LIST_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch/aec
+        ${CMAKE_CURRENT_LIST_DIR}/adec_alt_arch/stage1
+)
+target_link_libraries(adec_altarch_aec_ic_ns_dereverb_agc_2mic_2ref
+    INTERFACE
+        core::general
+        rtos::freertos
+        rtos::sw_services::generic_pipeline
+        fwk_voice::adec
+        fwk_voice::aec
+        fwk_voice::agc
+        fwk_voice::ic
+        fwk_voice::ns
+
+        fwk_voice::vnr::features
+        fwk_voice::vnr::inference
+)
+
+##******************************************
 ## Create empty audio pipeline
 ##******************************************
 
@@ -128,6 +165,7 @@ target_link_libraries(empty_2mic_2ref
 ##*********************************************
 
 add_library(sln_voice::app::ffva::ap::adec_altarch ALIAS adec_altarch_aec_ic_ns_agc_2mic_2ref)
+add_library(sln_voice::app::ffva::ap::adec_dereverb_altarch ALIAS adec_altarch_aec_ic_ns_dereverb_agc_2mic_2ref)
 add_library(sln_voice::app::ffva::ap::fixed_delay ALIAS fixed_delay_aec_ic_ns_agc_2mic_2ref)
 add_library(sln_voice::app::ffva::ap::adec ALIAS adec_aec_ic_ns_agc_2mic_2ref)
 add_library(sln_voice::app::ffva::ap::empty ALIAS empty_2mic_2ref)

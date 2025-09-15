@@ -63,6 +63,7 @@ if(ENABLE_ALL_FFVA_PIPELINES)
         fixed_delay
         adec
         adec_altarch
+        adec_dereverb_altarch
         empty
     )
 
@@ -70,6 +71,7 @@ if(ENABLE_ALL_FFVA_PIPELINES)
         fixed_delay
         adec
         adec_altarch
+        adec_dereverb_altarch
         empty
     )
 else()
@@ -79,6 +81,7 @@ else()
 
     set(FFVA_PIPELINES_UA
         adec_altarch
+        adec_dereverb_altarch
     )
 endif()
 

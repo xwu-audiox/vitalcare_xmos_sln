@@ -1,0 +1,2124 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.10.1
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+C:\Program Files\Microsoft Visual Studio\2022\Community>cl
+Microsoft (R) C/C++ Optimizing Compiler Version 19.40.33811 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+usage: cl [ option... ] filename... [ /link linkoption... ]
+
+C:\Program Files\Microsoft Visual Studio\2022\Community>cd C:\Program Files\XMOS\XTC\15.3.1\
+
+C:\Program Files\XMOS\XTC\15.3.1>SetEnv.bat
+
+C:\Program Files\XMOS\XTC\15.3.1>cd C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice
+
+C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>pipenv shell
+Launching subshell in virtual environment...
+Microsoft Windows [Version 10.0.26100.4652]
+(c) Microsoft Corporation. All rights reserved.
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>rmdir /S /Q build_host
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>cmake -G Ninja -B build_host -A x64
+CMake Error at CMakeLists.txt:9 (project):
+  Generator
+
+    Ninja
+
+  does not support platform specification, but platform
+
+    x64
+
+  was specified.
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>cmake -G Ninja -B build_host
+CMake Error at CMakeLists.txt:9 (project):
+  Generator
+
+    Ninja
+
+  does not support platform specification, but platform
+
+    x64
+
+  was specified.
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>rmdir /S /Q build_host
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>cmake -G Ninja -B build_host
+-- The C compiler identification is MSVC 19.40.33811.0
+-- The CXX compiler identification is MSVC 19.40.33811.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The ASM compiler identification is MSVC
+-- Found assembler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/bin/Hostx64/x64/cl.exe
+-- FreeRTOS port does not exist for Windows!  No RTOS targets made.
+-- C:/Work/AudioX/VitalCare/projects/vc_xmos/sln_voice/modules/rtos/tools/fatfs_mkimage
+-- C:/Work/AudioX/VitalCare/projects/vc_xmos/sln_voice/modules/rtos/modules/sw_services/fatfs
+-- Configuring for MSVC
+-- Configuring for MSVC
+-- Configuring done (3.3s)
+-- Generating done (0.4s)
+-- Build files have been written to: C:/Work/AudioX/VitalCare/projects/vc_xmos/sln_voice/build_host
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>ninja -C build_host install
+ninja: Entering directory `build_host'
+[86/96] Building C object modules\rt...\fatfs_mkimage.dir\src\ramdisk.c.obj
+C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\modules\rtos\tools\fatfs_mkimage\src\ramdisk.c(93): warning C4267: '=': conversion from 'size_t' to 'LBA_t', possible loss of data
+[88/96] Building C object modules\rt...atfs_mkimage.dir\src\fatfs_ops.c.obj
+C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\modules\rtos\tools\fatfs_mkimage\src\fatfs_ops.c(42): warning C4267: 'initializing': conversion from 'size_t' to 'DWORD', possible loss of data
+C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\modules\rtos\tools\fatfs_mkimage\src\fatfs_ops.c(98): warning C4267: 'function': conversion from 'size_t' to 'UINT', possible loss of data
+[92/96] Building C object modules\xs...st_endpoint.dir\xscope_io_host.c.obj
+C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\modules\xscope_fileio\xscope_fileio\host\xscope_io_host.c(147): warning C4477: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 2 has type 'size_t'
+C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\modules\xscope_fileio\xscope_fileio\host\xscope_io_host.c(147): note: consider using '%zu' in the format string
+[95/96] Install the project...-- Install configuration: "Debug"
+-- Installing: C:/Users/xiang/.xmos/bin/nibble_swap.exe
+-- Installing: C:/Users/xiang/.xmos/bin/fatfs_mkimage.exe
+-- Installing: C:/Users/xiang/.xmos/bin/datapartition_mkimage.exe
+-- Installing: C:/Users/xiang/.xmos/bin/xscope_host_endpoint.exe
+
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>ninja flash_app_example_ffva_ua_adec_altarch
+ninja: error: loading 'build.ninja': τ│╗τ╗ƒµë╛Σ╕ìσê░µîçσ«ÜτÜäµûçΣ╗╢πÇé
+
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>cmake -G Ninja -B build --toolchain=xmos_cmake_toolchain/xs3a.cmake
+-- Found python package xmos-ai-tools at: C:\Users\xiang\.virtualenvs\sln_voice-iECIOplw\lib\site-packages\xmos_ai_tools\runtime
+variable="15"
+-- Configuring done (1.2s)
+-- Generating done (1.7s)
+-- Build files have been written to: C:/Work/AudioX/VitalCare/projects/vc_xmos/sln_voice/build
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>cd build
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>ninja example_ffva_ua_adec_altarch
+[29/31] Linking CXX executable tile1_example_ffva_ua_adec_altarch.xe
+dfu_servicer.c: Warning: Undefined reference to 'device_control_ctxs'
+xmap: Warning: port "XS1_PORT_1F" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1E" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1H" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1J" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1K" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1I" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_8B" on tile[0] is not connected to any pins in this package.
+Constraint check for tile[0]:
+  Memory available:       524288,   used:       5300 .  OKAY
+    (Stack: 356, Code: 4248, Data: 696)
+Constraints checks PASSED.
+dfu_servicer.c: Warning: Undefined reference to 'device_control_ctxs'
+Constraint check for tile[1]:
+  Memory available:       524288,   used:      465156 .  OKAY
+    (Stack: 7124, Code: 58068, Data: 399964)
+Constraints checks PASSED WITH CAVEATS.
+[30/31] Linking CXX executable tile0_example_ffva_ua_adec_altarch.xe
+usbd.c: Warning: Undefined reference to 'tud_descriptor_device_qualifier_cb'
+usbd.c: Warning: Undefined reference to 'tud_descriptor_other_speed_configuration_cb'
+usbd.c: Warning: Undefined reference to 'usbd_app_driver_get_cb'
+xmap: Warning: port "XS1_PORT_1F" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1E" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1H" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1J" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1K" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1I" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_8B" on tile[0] is not connected to any pins in this package.
+Constraint check for tile[0]:
+  Memory available:       524288,   used:      428532+.  MAYBE
+    (Stack: 6420+, Code: 113440, Data: 308672)
+Constraints checks PASSED WITH CAVEATS.
+Constraint check for tile[1]:
+  Memory available:       524288,   used:      18600 .  OKAY
+    (Stack: 356, Code: 5180, Data: 13064)
+Constraints checks PASSED.
+[31/31] Merge tile 0,1 of tile1_exam...eate example_ffva_ua_adec_altarch.xe
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>cd build
+The system cannot find the path specified.
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>ninja flash_app_example_ffva_ua_adec_altarch
+[7/34] Create filesystem
+FAILED: CMakeFiles/example_ffva_ua_adec_altarch_fat.fs C:/Work/AudioX/VitalCare/projects/vc_xmos/sln_voice/build/CMakeFiles/example_ffva_ua_adec_altarch_fat.fs
+C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E rm -rf example_ffva_ua_adec_altarch_fatmktmp/fs/ && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory example_ffva_ua_adec_altarch_fatmktmp/fs/ && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Work/AudioX/VitalCare/projects/vc_xmos/sln_voice/examples/ffva/filesystem_support/demo.txt example_ffva_ua_adec_altarch_fatmktmp/fs/ && fatfs_mkimage --input=example_ffva_ua_adec_altarch_fatmktmp --output=example_ffva_ua_adec_altarch_fat.fs"
+'fatfs_mkimage' is not recognized as an internal or external command,
+operable program or batch file.
+[26/34] Building C object CMakeFiles...d/src/user/control/xud_device.xc.obj
+ninja: build stopped: subcommand failed.
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>dir C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build_host\modules\rtos\tools\fatfs_mkimage\
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is D442-2885
+
+ Directory of C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build_host\modules\rtos\tools\fatfs_mkimage
+
+2025/08/05  15:30    <DIR>          .
+2025/08/05  15:29    <DIR>          ..
+2025/08/05  15:29    <DIR>          CMakeFiles
+2025/08/05  15:29             2,104 cmake_install.cmake
+2025/08/05  15:30           194,560 fatfs_mkimage.exe
+2025/08/05  15:30         1,356,144 fatfs_mkimage.ilk
+2025/08/05  15:30         1,290,240 fatfs_mkimage.pdb
+               4 File(s)      2,843,048 bytes
+               3 Dir(s)  612,766,765,056 bytes free
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>cd ../build_host
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build_host>ninja install
+[0/1] Install the project...-- Install configuration: "Debug"
+-- Up-to-date: C:/Users/xiang/.xmos/bin/nibble_swap.exe
+-- Up-to-date: C:/Users/xiang/.xmos/bin/fatfs_mkimage.exe
+-- Up-to-date: C:/Users/xiang/.xmos/bin/datapartition_mkimage.exe
+-- Up-to-date: C:/Users/xiang/.xmos/bin/xscope_host_endpoint.exe
+
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build_host>cd ..
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>set PATH=%PATH%;%USERPROFILE%\.xmos\bin
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice>cd build
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>ninja flash_app_example_ffva_ua_adec_altarch
+[26/34] Create filesystem
+Filesystem image example_ffva_ua_adec_altarch_fat.fs successfully populated with contents of directory example_ffva_ua_adec_altarch_fatmktmp
+[31/34] Linking CXX executable tile1_example_ffva_ua_adec_altarch.xe
+dfu_servicer.c: Warning: Undefined reference to 'device_control_ctxs'
+xmap: Warning: port "XS1_PORT_1F" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1E" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1H" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1J" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1K" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1I" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_8B" on tile[0] is not connected to any pins in this package.
+Constraint check for tile[0]:
+  Memory available:       524288,   used:       5300 .  OKAY
+    (Stack: 356, Code: 4248, Data: 696)
+Constraints checks PASSED.
+dfu_servicer.c: Warning: Undefined reference to 'device_control_ctxs'
+Constraint check for tile[1]:
+  Memory available:       524288,   used:      465156 .  OKAY
+    (Stack: 7124, Code: 58068, Data: 399964)
+Constraints checks PASSED WITH CAVEATS.
+[32/34] Linking CXX executable tile0_example_ffva_ua_adec_altarch.xe
+usbd.c: Warning: Undefined reference to 'tud_descriptor_device_qualifier_cb'
+usbd.c: Warning: Undefined reference to 'tud_descriptor_other_speed_configuration_cb'
+usbd.c: Warning: Undefined reference to 'usbd_app_driver_get_cb'
+xmap: Warning: port "XS1_PORT_1F" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1E" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1H" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1J" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1K" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1I" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_8B" on tile[0] is not connected to any pins in this package.
+Constraint check for tile[0]:
+  Memory available:       524288,   used:      428532+.  MAYBE
+    (Stack: 6420+, Code: 113440, Data: 308672)
+Constraints checks PASSED WITH CAVEATS.
+Constraint check for tile[1]:
+  Memory available:       524288,   used:      18600 .  OKAY
+    (Stack: 356, Code: 5180, Data: 13064)
+Constraints checks PASSED.
+Site 0 has finished successfully.        ion
+
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>xrun --xscope example_ffva_ua_adec_altarch.xe
+start scheduler on tile 1
+start scheduler on tile 0
+Logical Core 0 initializing as FreeRTOS Core 0
+Logical Core 1 initializing as FreeRTOS Core 1
+Logical Core 2 initializing as FreeRTOS Core 2
+Logical Core 3 initializing as FreeRTOS Core 3
+Logical Core 4 initializing as FreeRTOS Core 4
+Logical Core 5 initializing as FreeRTOS Core 5
+Logical Core 6 initializing as FreeRTOS Core 6
+Logical Core 0 initializing as FreeRTOS Core 0
+Logical Core 7 initializing as FreeRTOS Core 7
+Logical Core 1 initializing as FreeRTOS Core 1
+Logical Core 2 initializing as FreeRTOS Core 2
+Logical Core 3 initializing as FreeRTOS Core 3
+FreeRTOS Core 3 initialized
+FreeRTOS Core 4 initialized
+Logical Core 4 initializing as FreeRTOS Core 4
+FreeRTOS Core 5 initialized
+Logical Core 5 initializing as FreeRTOS Core 5
+FreeRTOS Core 6 initialized
+FreeRTOS Core 7 initialized
+FreeRTOS Core 0 initialized
+FreeRTOS Core 4 initialized
+FreeRTOS Core 1 initialized
+FreeRTOS Core 5 initialized
+FreeRTOS Core 2 initialized
+FreeRTOS Core 0 initialized
+Startup task running from tile 1 on core 4
+idle hook on tile 1 core 5
+FreeRTOS Core 1 initialized
+FreeRTOS Core 2 initialized
+idle hook on tile 1 core 6
+FreeRTOS Core 3 initialized
+idle hook on tile 1 core 7
+idle hook on tile 1 core 0
+idle hook on tile 1 core 3
+Startup task running from tile 0 on core 4
+idle hook on tile 0 core 3
+idle hook on tile 0 core 0
+idle hook on tile 0 core 2
+idle hook on tile 1 core 4
+idle hook on tile 1 core 7
+idle hook on tile 0 core 3
+idle hook on tile 0 core 3
+idle hook on tile 0 core 0
+idle hook on tile 1 core 7
+Registering I2C device control resources now
+Device control resources registered for I2C on tile 0
+I2C slave on tile 0 core 5
+Tile[0]:
+        Minimum heap free: 96016
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 90656
+        Current heap free: 90656
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 90224
+Tile[1]:
+        Minimum heap free: 82912
+        Current heap free: 84896
+Tile[0]:
+        Minimum heap free: 88256
+        Current heap free: 96016
+xrun: FATAL: uart_trace_thread(): Failed poll: -3
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>ninja create_upgrade_img_example_ffva_ua_adec_altarch
+[29/32] Linking CXX executable tile1_example_ffva_ua_adec_altarch.xe
+dfu_servicer.c: Warning: Undefined reference to 'device_control_ctxs'
+xmap: Warning: port "XS1_PORT_1F" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1E" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1H" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1J" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1K" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1I" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_8B" on tile[0] is not connected to any pins in this package.
+Constraint check for tile[0]:
+  Memory available:       524288,   used:       5300 .  OKAY
+    (Stack: 356, Code: 4248, Data: 696)
+Constraints checks PASSED.
+dfu_servicer.c: Warning: Undefined reference to 'device_control_ctxs'
+Constraint check for tile[1]:
+  Memory available:       524288,   used:      465156 .  OKAY
+    (Stack: 7124, Code: 58068, Data: 399964)
+Constraints checks PASSED WITH CAVEATS.
+[30/32] Linking CXX executable tile0_example_ffva_ua_adec_altarch.xe
+usbd.c: Warning: Undefined reference to 'tud_descriptor_device_qualifier_cb'
+usbd.c: Warning: Undefined reference to 'tud_descriptor_other_speed_configuration_cb'
+usbd.c: Warning: Undefined reference to 'usbd_app_driver_get_cb'
+xmap: Warning: port "XS1_PORT_1F" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1E" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1H" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1J" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1K" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_1I" on tile[0] is not connected to any pins in this package.
+xmap: Warning: port "XS1_PORT_8B" on tile[0] is not connected to any pins in this package.
+Constraint check for tile[0]:
+  Memory available:       524288,   used:      428532+.  MAYBE
+    (Stack: 6420+, Code: 113440, Data: 308672)
+Constraints checks PASSED WITH CAVEATS.
+Constraint check for tile[1]:
+  Memory available:       524288,   used:      18600 .  OKAY
+    (Stack: 356, Code: 5180, Data: 13064)
+Constraints checks PASSED.
+[31/32] Create upgrade image for application
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>dfu-util -l
+'dfu-util' is not recognized as an internal or external command,
+operable program or batch file.
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>xflash --quad-spi-clock 50MHz --factory example_ffva_ua_adec_altarch.xe --boot-partition-size 0x100000 --data example_ffva_ua_adec_altarch_data_partition.bin
+Site 0 has finished successfully.
+
+(sln_voice-iECIOplw) C:\Work\AudioX\VitalCare\projects\vc_xmos\sln_voice\build>
